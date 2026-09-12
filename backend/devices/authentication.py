@@ -1,9 +1,9 @@
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import AuthenticationFailed
-from .mmodels import Device
+from .models import Device
 
 class DeviceTokenAuthentication(BaseAuthentication):
-    def authentication(self, request):
+    def authenticate(self, request):
         token = request.headers.get('Authorization')
         if not token or not token.startswith('Token '):
             return none 
