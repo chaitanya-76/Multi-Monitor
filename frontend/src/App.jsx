@@ -1,6 +1,7 @@
 import React from 'react'
 import Login from './pages/Login'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
 
 const isAuthenticated = () => {
     return !!localStorage.getItem('access_token')
@@ -17,7 +18,7 @@ export const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={
                 <ProtectedRoute>
-                    <div>Dashboard pending for now</div>
+                    <Dashboard />
                 </ProtectedRoute>
             }/>
             <Route path="*" element={<Navigate to="/login" />} />
