@@ -40,7 +40,7 @@ const Dashboard = () => {
             <ul>
                 {devices.map((device) => (
                     <li key={device.id}>
-                        <Link to={`/device/${devices.id}`}>
+                        <Link to={`/devices/${device.id}`}>
                             <strong>{device.name}</strong> 
                         </Link>
                         {' '}({device.os_type}) - {device.is_online ? '🟢 Online' : '🔴 Offline'}
